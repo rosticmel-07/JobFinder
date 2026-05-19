@@ -1,0 +1,15 @@
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.button {
+  background: #778899;
+  border-radius: 14px;
+  padding: 15px 20px;
+  width: 164px;
+  height: 68px;
+  font-weight: 400;
+  font-size: 20px;
+}
