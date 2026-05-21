@@ -15,7 +15,7 @@ export default function DashboardHeader() {
       <div className={css.left}>
         <p className={css.date}>{formattedDate}</p>
 
-        <h1 className={css.title}>Good morning, Rostik 👋</h1>
+        <h1 className={css.title}>Good morning, Rostik </h1>
 
         <p className={css.subtitle}>Track your job applications</p>
       </div>

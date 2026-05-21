@@ -1,7 +1,13 @@
-/* .sidebar {
+.sidebar {
+  width: 250px;
+  background-color: #333;
+  color: white;
+  height: 100vh;
+  padding: 30px;
+  text-align: start;
 }
 .logo {
-} */
+}
 .navList {
   list-style-type: none;
   margin: 0;
@@ -15,6 +21,6 @@
   color: white;
   font-size: 16px;
   display: block;
-  padding: 8px 16px;
+
   transition: background-color 0.3s ease;
 }
