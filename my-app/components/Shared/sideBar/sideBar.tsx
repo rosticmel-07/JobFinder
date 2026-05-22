@@ -8,7 +8,7 @@ export default function SideBar() {
 
       <ul className={styles.navList}>
         <li className={styles.navItem}>
-          <Link href="/" className={styles.navLink}>
+          <Link href="/dashboard" className={styles.navLink}>
             Home
           </Link>
         </li>

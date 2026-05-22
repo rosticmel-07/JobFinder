@@ -1,7 +1,11 @@
+import DashboardHeader from "@/components/DashboardHeader/DashboardHeader";
+import StatsCards from "@/components/StatsCards/StatsCards";
+
 export default function DashboardPage() {
   return (
-    <div>
-      <p></p>
-    </div>
+    <>
+      <DashboardHeader />
+      <StatsCards />
+    </>
   );
 }
