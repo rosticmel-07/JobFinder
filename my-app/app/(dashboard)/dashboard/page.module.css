@@ -1,0 +1,15 @@
+.jobsArea {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 80px;
+  padding: 32px;
+}
+
+.mainContent {
+  min-width: 0;
+}
+
+.profileSection {
+  width: 320px;
+}

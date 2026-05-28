@@ -25,3 +25,14 @@
 .profileSection {
   width: 320px;
 }
+
+.layout {
+  display: flex;
+  min-height: 100vh;
+  background: #111827;
+}
+
+.content {
+  flex: 1;
+  overflow-x: hidden;
+}

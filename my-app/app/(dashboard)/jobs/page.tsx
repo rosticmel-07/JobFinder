@@ -1,11 +1,13 @@
 import JobsCards from "@/components/Jobs/JobsCards/JobsCards";
-export default function JobsPage() {
+import { fetchJobs } from "@/lib/api";
+import type { Job } from "@/type/jobs/job";
+import JobsClient from "@/components/Jobs/JobsClient/JobsClient";
+export default async function JobsPage() {
+  const jobs: Job[] = await fetchJobs();
   return (
     <div>
-      <h2>Browse Jobs</h2>
-      <p>Find your next opportunity with our extensive job listings.</p>
-      <button> Post a Job</button>
-      <JobsCards />
+      {/* <JobsCards jobs={jobs} /> */}
+      <JobsClient jobs={jobs} />
     </div>
   );
 }
