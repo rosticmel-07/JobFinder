@@ -1,0 +1,37 @@
+.saveButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  min-width: 140px;
+  padding: 14px 22px;
+
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+
+  background: #ffffff;
+  color: #111827;
+
+  font-size: 16px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.saveButton:hover {
+  transform: translateY(-2px);
+  border-color: #22c55e;
+}
+
+.saved {
+  background: #22c55e;
+  color: #ffffff;
+  border-color: #22c55e;
+}

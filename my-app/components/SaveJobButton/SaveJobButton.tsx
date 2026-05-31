@@ -1,28 +1,51 @@
 "use client";
+
 import { Bookmark } from "lucide-react";
+import { useEffect, useState } from "react";
 import css from "./SaveJobButton.module.css";
-import { useState } from "react";
-export default function SaveJobButton() {
-  const [isSaved, setIsSaved] = useState(false);
+
+type SaveJobButtonProps = {
+  jobId: string;
+};
+
+export default function SaveJobButton({ jobId }: SaveJobButtonProps) {
+  const [savedJobIds, setSavedJobIds] = useState<string[]>([]);
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    const saved = localStorage.getItem("saved-jobs");
+
+    if (saved) {
+      setSavedJobIds(JSON.parse(saved));
+    }
+
+    setIsLoaded(true);
+  }, []);
+
+  const isSaved = savedJobIds.includes(jobId);
+
+  useEffect(() => {
+    if (!isLoaded) return;
+
+    localStorage.setItem("saved-jobs", JSON.stringify(savedJobIds));
+  }, [savedJobIds, isLoaded]);
+
   const handleSave = () => {
-    setIsSaved(!isSaved);
+    if (isSaved) {
+      setSavedJobIds((prev) => prev.filter((id) => id !== jobId));
+    } else {
+      setSavedJobIds((prev) => [...prev, jobId]);
+    }
   };
+
   return (
     <button
+      type="button"
       onClick={handleSave}
-      style={{
-        padding: "10px 20px",
-        borderRadius: "5px",
-        backgroundColor: isSaved ? "#4CAF50" : "#f0f0f0",
-        color: isSaved ? "#ffffff" : "#333333",
-        border: "none",
-        cursor: "pointer",
-        transition: "0.3s",
-      }}
-      className={css.saveButton}
+      className={`${css.saveButton} ${isSaved ? css.saved : ""}`}
     >
-      {" "}
-      <Bookmark size={18} /> {isSaved ? "Saved" : "Save"}{" "}
+      <Bookmark size={18} />
+      {isSaved ? "Saved" : "Save"}
     </button>
   );
 }

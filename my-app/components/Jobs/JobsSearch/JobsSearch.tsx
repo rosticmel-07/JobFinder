@@ -9,7 +9,7 @@ export default function JobsSearch({ value, onChange }: JobsSearchProps) {
   return (
     <div className={css.wrapper}>
       <label htmlFor="search" className={css.label}>
-        Search jobs{" "}
+        {" "}
       </label>
       <input
         id="search"

@@ -8,11 +8,6 @@ type JobProps = {
 export default function JobsCards({ jobs }: JobProps) {
   return (
     <section className={css.wrapper}>
-      <div className={css.header}>
-        <h1 className={css.title}>Browse Jobs</h1>
-        <p className={css.subtitle}>Find your next opportunity</p>
-      </div>
-
       <div className={css.list}>
         {jobs.map((job) => (
           <article key={job.id} className={css.card}>

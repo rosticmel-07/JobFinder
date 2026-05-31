@@ -10,11 +10,7 @@ export default function JobsLayout({
 }) {
   return (
     <div className={styles.jobsArea}>
-      <div className={styles.mainContent}>
-        <SearchBar />
-
-        {children}
-      </div>
+      <div className={styles.mainContent}>{children}</div>
 
       <aside className={styles.profileSection}>
         <ProfileCard />

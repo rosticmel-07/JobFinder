@@ -54,11 +54,7 @@ export default async function JobDetailsPage(props: Props) {
             Apply Now
           </button>
 
-          {/* <button className={css.saveButton}>
-            <Bookmark size={18} />
-            Save Job
-          </button> */}
-          <SaveJobButton />
+          <SaveJobButton jobId={job.id} />
         </div>
       </div>
     </section>

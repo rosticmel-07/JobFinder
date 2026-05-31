@@ -1,0 +1,21 @@
+.savedPage {
+  width: 100%;
+
+  padding: 40px 48px;
+}
+
+.header {
+  margin-bottom: 32px;
+}
+
+.header h1 {
+  font-size: 36px;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.header p {
+  margin-top: 8px;
+  color: #64748b;
+  font-size: 18px;
+}

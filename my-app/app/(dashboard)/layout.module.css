@@ -24,12 +24,14 @@
 
 .profileSection {
   width: 320px;
+  flex-shrink: 0;
 }
 
 .layout {
   display: flex;
   min-height: 100vh;
-  background: #111827;
+
+  background: #f8fafc;
 }
 
 .content {
