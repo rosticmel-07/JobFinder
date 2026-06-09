@@ -3,6 +3,7 @@ import { ArrowLeft, Bookmark, Send } from "lucide-react";
 import { getJobById } from "@/lib/api";
 import css from "./JobDetails.module.css";
 import SaveJobButton from "@/components/SaveJobButton/SaveJobButton";
+import ApplyButton from "@/components/Jobs/ApplyButton/ApplyButton";
 
 type Props = {
   params: Promise<{ jobId: string }>;
@@ -49,12 +50,12 @@ export default async function JobDetailsPage(props: Props) {
         </div>
 
         <div className={css.actions}>
-          <button className={css.applyButton}>
-            <Send size={18} />
-            Apply Now
-          </button>
-
           <SaveJobButton jobId={job.id} />
+          <ApplyButton
+            jobId={job.id}
+            jobTitle={job.title}
+            company={job.company}
+          />
         </div>
       </div>
     </section>
