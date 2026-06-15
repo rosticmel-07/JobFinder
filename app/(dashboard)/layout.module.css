@@ -1,0 +1,67 @@
+.layout {
+  display: flex;
+  min-height: 100vh;
+  background: #f8fafc;
+}
+
+.content {
+  flex: 1;
+  overflow-x: hidden;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.dashboardArea {
+  width: 100%;
+  max-width: 1500px;
+
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  gap: 72px;
+
+  padding: 32px;
+}
+
+.mainContent {
+  min-width: 0;
+}
+
+.profileSection {
+  width: 320px;
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .layout {
+    display: block;
+  }
+
+  .content {
+    width: 100%;
+  }
+
+  .container {
+    display: block;
+    width: 100%;
+  }
+
+  .dashboardArea {
+    display: block;
+    width: 100%;
+    max-width: none;
+    padding: 88px 20px 32px;
+  }
+
+  .mainContent {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .profileSection {
+    display: none;
+  }
+}
