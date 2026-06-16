@@ -56,13 +56,25 @@ export default function ApplicationsClient() {
     handleDelete(id);
   };
 
-  return (
+  return applications.length === 0 ? (
+    <div className={css.emptyState}>
+      <h2>No applications yet</h2>
+
+      <p>
+        You havent submitted any job applications yet. Start applying for jobs
+        to track them here.
+      </p>
+
+      <Link href="/jobs" className={css.emptyButton}>
+        Browse Jobs
+      </Link>
+    </div>
+  ) : (
     <div className={css.list}>
       {applications.map((application) => (
         <article key={application.id} className={css.card}>
           <div>
             <h3 className={css.jobTitle}>{application.jobTitle}</h3>
-
             <p className={css.company}>{application.company}</p>
           </div>
 
@@ -91,6 +103,7 @@ export default function ApplicationsClient() {
             <Link href={`/jobs/${application.jobId}`} className={css.button}>
               View Job
             </Link>
+
             <button
               onClick={() => handleButtonClick(application.id)}
               className={`${css.button} ${css.rejectButton}`}
