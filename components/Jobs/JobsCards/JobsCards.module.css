@@ -108,6 +108,22 @@
   background: #16a34a;
   transform: translateY(-2px);
 }
+.logoFallback {
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #dcfce7;
+  color: #166534;
+
+  font-size: 24px;
+  font-weight: 800;
+  flex-shrink: 0;
+}
 
 @media (max-width: 768px) {
   .card {

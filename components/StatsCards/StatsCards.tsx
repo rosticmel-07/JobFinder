@@ -12,6 +12,18 @@ import {
   icons,
 } from "lucide-react";
 
+type Application = {
+  id: string;
+  jobId: string;
+  jobTitle: string;
+  company: string;
+  name: string;
+  email: string;
+  message: string;
+  status: string;
+  createdAt: string;
+};
+
 export default function StatsCards() {
   const [savedJobsCount, setSavedJobsCount] = useState(0);
   const [applicationsCount, setApplicationsCount] = useState(0);
@@ -32,7 +44,7 @@ export default function StatsCards() {
     const applications = window.localStorage.getItem("applications");
 
     if (applications) {
-      const savedApplications = JSON.parse(applications);
+      const savedApplications: Application[] = JSON.parse(applications);
 
       setApplicationsCount(savedApplications.length);
 

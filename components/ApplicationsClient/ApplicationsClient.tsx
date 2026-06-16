@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import css from "./ApplicationsClient.module.css";
+import toast from "react-hot-toast";
 
 type Application = {
   id: string;
@@ -43,6 +44,17 @@ export default function ApplicationsClient() {
 
     localStorage.setItem("applications", JSON.stringify(updatedApplications));
   };
+  const handleDelete = (id: string) => {
+    const updated = applications.filter((application) => application.id !== id);
+
+    setApplications(updated);
+
+    localStorage.setItem("applications", JSON.stringify(updated));
+  };
+  const handleButtonClick = (id: string) => {
+    toast.success("Application deleted successfully!");
+    handleDelete(id);
+  };
 
   return (
     <div className={css.list}>
@@ -79,6 +91,12 @@ export default function ApplicationsClient() {
             <Link href={`/jobs/${application.jobId}`} className={css.button}>
               View Job
             </Link>
+            <button
+              onClick={() => handleButtonClick(application.id)}
+              className={`${css.button} ${css.rejectButton}`}
+            >
+              Delete
+            </button>
           </div>
         </article>
       ))}

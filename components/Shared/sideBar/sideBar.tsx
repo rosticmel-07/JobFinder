@@ -19,9 +19,9 @@ const navLinks = [
   { href: "/dashboard", label: "Dashboard", icon: LayoutDashboard },
   { href: "/jobs", label: "Browse Jobs", icon: Briefcase },
   { href: "/applications", label: "Applications", icon: FileText },
-  { href: "/companies", label: "Companies", icon: Building2 },
+  // { href: "/companies", label: "Companies", icon: Building2 },
   { href: "/saved", label: "Saved", icon: Bookmark },
-  { href: "/messages", label: "Messages", icon: MessageSquare },
+  // { href: "/messages", label: "Messages", icon: MessageSquare },
 ];
 
 export default function SideBar() {

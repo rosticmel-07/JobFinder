@@ -3,6 +3,7 @@
 import { Bookmark } from "lucide-react";
 import { useEffect, useState } from "react";
 import css from "./SaveJobButton.module.css";
+import toast from "react-hot-toast";
 
 type SaveJobButtonProps = {
   jobId: string;
@@ -37,11 +38,19 @@ export default function SaveJobButton({ jobId }: SaveJobButtonProps) {
       setSavedJobIds((prev) => [...prev, jobId]);
     }
   };
+  const handleButtonClick = () => {
+    if (isSaved) {
+      toast.success("Job removed from saved jobs!");
+    } else {
+      toast.success("Job saved successfully!");
+    }
+    handleSave();
+  };
 
   return (
     <button
       type="button"
-      onClick={handleSave}
+      onClick={handleButtonClick}
       className={`${css.saveButton} ${isSaved ? css.saved : ""}`}
     >
       <Bookmark size={18} />

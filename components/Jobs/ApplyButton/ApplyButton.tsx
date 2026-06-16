@@ -4,6 +4,7 @@ import { Formik, Form, Field, ErrorMessage, type FormikHelpers } from "formik";
 import { useState, useEffect } from "react";
 import * as Yup from "yup";
 import css from "./ApplyButton.module.css";
+import toast from "react-hot-toast";
 
 interface FormValues {
   name: string;
@@ -78,15 +79,10 @@ export default function ApplyButton({
     const updatedApplications = [...applications, newApplication];
     setApplications(updatedApplications);
     localStorage.setItem("applications", JSON.stringify(updatedApplications));
-    console.log({
-      jobId,
-      jobTitle,
-      company,
-      ...values,
-    });
 
     formikHelpers.resetForm();
     setIsModalOpen(false);
+    toast.success("Application submitted successfully!");
   };
 
   return (

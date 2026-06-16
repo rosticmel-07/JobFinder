@@ -1,6 +1,7 @@
 import SideBar from "@/components/Shared/sideBar/sideBar";
 import styles from "./layout.module.css";
-import ProfileCard from "@/components/Profile/ProfileCard";
+
+import toast, { Toaster } from "react-hot-toast";
 
 export default function DashboardLayout({
   children,
@@ -11,6 +12,9 @@ export default function DashboardLayout({
     <div className={styles.layout}>
       <SideBar />
 
+      <div>
+        <Toaster position="top-right" reverseOrder={false} />
+      </div>
       <div className={styles.container}>{children}</div>
     </div>
   );

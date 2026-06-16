@@ -12,17 +12,10 @@ export default function JobsCards({ jobs }: JobProps) {
         {jobs.map((job) => (
           <article key={job.id} className={css.card}>
             <div className={css.top}>
-              <img
-                src={job.logo}
-                width={60}
-                height={60}
-                alt={job.company}
-                className={css.logo}
-              />
+              <div className={css.logoFallback}>{job.company.charAt(0)}</div>
 
               <div className={css.info}>
                 <h2 className={css.jobTitle}>{job.title}</h2>
-
                 <p className={css.company}>
                   {job.company} • {job.location}
                 </p>
